@@ -18,7 +18,7 @@ const ReaderLayout = () => {
           <NavItem to="/reader/readerDashboard" label="Dashboard" />
           <NavItem to="/reader/readerBooks" label="Books" />
           <NavItem to="/reader/readerProfile" label="Profile" />
-          <NavItem to="/reader/readerFavorites" label="Profile" />
+          <NavItem to="/reader/readerFavorites" label="Favorites" />
         </nav>
 
         {/* FOOTER */}

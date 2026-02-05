@@ -1,13 +1,25 @@
+import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 
 const Profile = () => {
-  const [users, setUsers] = useState([])
+
+    type User = {
+        id: number;
+        name: string;
+        username: string;
+        email: string;
+        phone: string;
+        website: string;
+    };
+    const [users, setUsers] = useState<User[]>([])
 
     // useEffect(() => {
     //     fetch('https://jsonplaceholder.typicode.com/users')
     //         .then(response => response.json())
     //         .then(json => setUsers(json))
     // }, [])
+
+
 
     useEffect(() => {
         axios
@@ -38,7 +50,7 @@ const Profile = () => {
                 <tbody>
                     {
                         users.map((user, index) => (
-                            <tr>
+                            <tr key={index}>
                                 <td>{user.id}</td>
                                 <td>{user.name}</td>
                                 <td>{user.username}</td>

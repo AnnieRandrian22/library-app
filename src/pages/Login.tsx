@@ -37,7 +37,7 @@ const Login: React.FC = () => {
       localStorage.setItem("userRole", "admin");
 
       //navigate("/admin/dashboard");
-      navigate("/adminLayout")
+      navigate("/admin/dashboard")
       return;
     }
 
@@ -49,7 +49,7 @@ const Login: React.FC = () => {
       localStorage.setItem("userRole", "reader");
 
       //navigate("/reader/profile");
-      navigate("/reader")
+      navigate("/reader/profile")
       return;
     }
 
