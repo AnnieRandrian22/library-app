@@ -8,7 +8,7 @@ const AdminLayout = () => {
     <div className="flex min-h-screen bg-gray-100">
       
       {/* SIDEBAR */}
-      <aside className="w-64 bg-gray-900 text-gray-100 flex flex-col">
+      <aside className="fixed top-0 left-0 h-screen w-64 bg-gray-900 text-gray-100 flex flex-col">
         
         {/* LOGO / TITLE */}
         <div className="h-16 flex items-center justify-center border-b border-gray-700">
@@ -29,7 +29,7 @@ const AdminLayout = () => {
       </aside>
 
       {/* CONTENT */}
-      <main className="flex-1 p-6">
+      <main className="ml-64 flex-1 p-6 overflow-y-auto">
         <Suspense fallback= {<Loader/>}>
           <Outlet />
         </Suspense>
