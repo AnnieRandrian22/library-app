@@ -37,6 +37,17 @@ const ReaderFavorites = () => {
   ];
 
   const [users2, setUsers2] = useState<User[]>(initialUsers);
+  const [search, setSearch] = useState('');
+
+  const filteredUsers = users2.filter(user =>
+    user.name.toLowerCase().includes(search.toLowerCase()) ||
+    user.age.toString().includes(search)
+  );
+
+  const [editingUser, setEditingUser] = useState<User | null>(null);
+
+  const [editName, setEditName] = useState("");
+const [editAge, setEditAge] = useState<number | "">("");
 
 
   return (
@@ -74,6 +85,25 @@ const ReaderFavorites = () => {
 
       {/* rev2 */}
 
+      {/* Input */}
+      <input
+        type="text"
+        placeholder="Rechercher..."
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+        style={{
+          width: '500px',
+          padding: '12px 40px',
+          border: '2px solid #e0e0e0',
+          borderRadius: '8px',
+          fontSize: '16px',
+          outline: 'none',
+          backgroundColor: 'white',
+          marginBottom: "10px"
+        }}
+      // value={users2.find(user => user.name === "")?.name || "Non trouvé"}
+      />
+
       <table style={{ borderCollapse: 'collapse', width: '100%' }}>
         <thead>
           <tr>
@@ -84,18 +114,42 @@ const ReaderFavorites = () => {
           </tr>
         </thead>
         <tbody>
-          {users2.map(user =>
+          {filteredUsers.map(user =>
             <tr key={user.id}>
               <td style={{ border: '1px solid black', padding: '8px' }}>{user.id}</td>
               <td style={{ border: '1px solid black', padding: '8px' }}>{user.name}</td>
               <td style={{ border: '1px solid black', padding: '8px' }}>{user.age}</td>
               <td style={{ border: '1px solid black', padding: '8px' }}>
-                <button className="buttonStyle">Supprimer</button>
+                <button className="buttonStyle" onClick={() => setUsers2(users2.filter(u => u.id !== user.id))}>
+                  Supprimer
+                </button>
+                <button className="buttonStyleEdit" onClick={() => setEditingUser(user)}>
+                  Modifier
+                </button>
               </td>
             </tr>
           )}
         </tbody>
       </table>
+
+      {editingUser && (
+        <div style={{ marginBottom: "20px" }}>
+          <h3>Modifier l'utilisateur</h3>
+
+          <input
+            type="text"
+            value={editingUser.name}
+            readOnly
+          />
+
+          <input
+            type="number"
+            value={editingUser.age}
+            readOnly
+          />
+        </div>
+      )}
+
     </div>
 
 

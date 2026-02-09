@@ -37,3 +37,43 @@
   cursor: not-allowed;
   opacity: 0.6;
 }
+
+
+/* bouton edit */
+.buttonStyleEdit {
+  padding: 10px 20px;
+  background-color: #128205; /* Vert */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer; /* Curseur en main */
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  margin: 10px 0;
+  margin-left: 10px;
+}
+
+/* Effet hover */
+.buttonStyleEdit:hover {
+  background-color: #3fde3f; /* Vert plus foncé */
+}
+
+/* Effet quand le bouton est cliqué */
+.buttonStyleEdit:active {
+  background-color: #3d8b40;
+  transform: scale(0.98);
+}
+
+/* Effet focus pour accessibilité */
+.buttonStyleEdit:focus {
+  outline: 2px solid #2E7D32;
+  outline-offset: 2px;
+}
+
+/* Style pour un bouton désactivé */
+.buttonStyleEdit:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
