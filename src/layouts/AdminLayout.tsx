@@ -20,6 +20,7 @@ const AdminLayout = () => {
           <NavItem to="/admin/dashboard" label="Dashboard" />
           <NavItem to="/admin/books" label="Books" />
           <NavItem to="/admin/profile" label="Profile" />
+          <NavItem to="/admin/users" label="Users" />
         </nav>
 
         {/* FOOTER */}
