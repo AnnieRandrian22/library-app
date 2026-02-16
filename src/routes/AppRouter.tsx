@@ -9,6 +9,7 @@ import Login from '../pages/Login';
 import AdminLayout from '../layouts/AdminLayout';
 import ProtectedRoute from './ProtectedRoute';
 import ReaderLayout from '../layouts/ReaderLayout';
+import Users from '../features/admin/pages/Users';
 
 
 
@@ -58,6 +59,7 @@ const AppRouter = () => {
                     <Route path='dashboard' element={<Dashboard />}/>
                     <Route path='profile' element={<Profile />}/>
                     <Route path='books' element={<Books />}/>
+                    <Route path="users" element={<Users/>} />
                     <Route path='/admin/*' element={<Navigate to="/admin/dashboard" replace />}/>
                 </Route>
 
@@ -78,9 +80,7 @@ const AppRouter = () => {
 
 
                 <Route path="*" element={<Navigate to="/login" replace />} />
-
-                
-                
+   
             </Routes>
         </Router>
       
