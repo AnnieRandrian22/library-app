@@ -1,14 +1,25 @@
 import { useState } from "react";
-import type { User } from "../hooks/useUsers";
+
 import useUsers from "../hooks/useUsers";
 
 const Users = () => {
-  const { users,filteredUsers, editAge, editName, editingUser, search, setEditAge, setEditName, setEditingUser, setUsers, setSearch} = useUsers();
-
+  //destruction
+  const {
+    users,
+    filteredUsers,
+    editAge,
+    editName,
+    editingUser,
+    search,
+    setEditAge,
+    setEditName,
+    setEditingUser,
+    setUsers,
+    setSearch,
+  } = useUsers();
 
   return (
     <div>
-      
       {/* Input */}
       <input
         type="text"
@@ -25,7 +36,8 @@ const Users = () => {
           backgroundColor: "white",
           marginBottom: "10px",
         }}
-        // value={users2.find(user => user.name === "")?.name || "Non trouvé"}
+
+        // value={users.find(user => user.name === "")?.name || "Non trouvé"}
       />
 
       <table style={{ borderCollapse: "collapse", width: "100%" }}>
@@ -81,7 +93,7 @@ const Users = () => {
       {editingUser && (
         <div
           style={{
-            marginTop: '20px',
+            marginTop: "20px",
             marginBottom: "25px",
             padding: "15px",
             border: "1px solid #ddd",
