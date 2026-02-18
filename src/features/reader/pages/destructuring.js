@@ -94,3 +94,11 @@ var fruits = [
 // console.log(akondro)
 
 // const [nom, setNom] = [attribut, changeAttribut]
+
+class humain{
+    nom = "annie"
+    static x = "fdsjqmf"
+}
+
+const annie = new humain();
+console.log(humain.x)

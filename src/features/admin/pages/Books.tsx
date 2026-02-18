@@ -8,10 +8,6 @@ const Books = () => {
     setSearch,
     loading,
     setLoading,
-    handleAddBook,
-    handleToggleAvailability,
-    handleDelete,
-    filteredBooks,
   } = useBooks();
 
   return (
@@ -22,7 +18,6 @@ const Books = () => {
           <h1 className="text-2xl font-bold text-gray-800">Books Management</h1>
 
           <button
-            onClick={handleAddBook}
             className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition"
           >
             Add Book
@@ -43,7 +38,7 @@ const Books = () => {
 
         {/* Books List */}
         <div className="space-y-4">
-          {filteredBooks.map((book) => (
+          {books.map((book) => (
             <div
               key={book.id}
               className="flex justify-between items-center bg-gray-50 p-4 rounded-lg shadow-sm hover:shadow-md transition"
@@ -68,14 +63,12 @@ const Books = () => {
               {/* Actions */}
               <div className="flex gap-3">
                 <button
-                  onClick={() => handleToggleAvailability(book)}
                   className="bg-yellow-400 hover:bg-yellow-500 text-white px-3 py-2 rounded-lg transition"
                 >
                   Toggle
                 </button>
 
                 <button
-                  onClick={() => handleDelete(book.id)}
                   className="bg-red-500 hover:bg-red-600 text-white px-3 py-2 rounded-lg transition"
                 >
                   Delete
